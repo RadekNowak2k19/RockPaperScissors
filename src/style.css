@@ -1,0 +1,106 @@
+:root {
+	--border: hsl(217, 16%, 45%);
+	--darkText: hsl(229, 25%, 31%);
+	--borderRadius: 8px;
+}
+/* https://www.joshwcomeau.com/css/custom-css-reset */
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	/* background-color: var(--backgroundColor); */
+	background: linear-gradient(180deg, rgb(31, 55, 86), hsl(237, 49%, 15%));
+	/* background-color: red; */
+	width: 100%;
+	height: 100dvh;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+ol,
+ul {
+	list-style: none;
+}
+/*https://www.youtube.com/@slayingthedragon
+// * xs */
+@media (min-width: 475px) {
+}
+/* sm */
+@media (min-width: 640px) {
+}
+/* md */
+@media (min-width: 768px) {
+}
+/* lg */
+@media (min-width: 1024px) {
+}
+/* xl */
+@media (min-width: 1280px) {
+}
+/* 2xl */
+@media (min-width: 1536px) {
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+// App 
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+header {
+	align-items: center;
+	border: 1.5px solid var(--border);
+	border-radius: var(--borderRadius);
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+	margin: 1rem auto;
+	padding: 12px;
+	width: calc(100% - 10%);
+}
+header h1 span {
+	display: block;
+	font-size: 22px;
+	line-height: 0.85;
+}
+header div {
+	background-color: #fff;
+	border-radius: var(--borderRadius);
+	color: var(--darkText);
+	padding: 1rem;
+	text-align: center;
+}
+header div p {
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+	header {
+		width: 690px;
+	}
+	header h1 span {
+		font-size: 28px;
+	}
+}
