@@ -155,6 +155,66 @@ header div p {
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 // Rules element
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+.btn {
+	background-color: transparent;
+	border: 1px solid var(--border);
+	border-radius: var(--borderRadius);
+	color: #fff;
+	padding: 1rem 1.5rem;
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
+}
+.btn:hover {
+	border-color: hsl(349, 71%, 52%);
+	color: hsl(349, 70%, 56%);
+	cursor: pointer;
+}
+.popupBg {
+	background-color: rgba(33, 33, 33, 0.5);
+	display: none;
+	height: 100dvh;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 5;
+}
+.popupBg.active {
+	display: block;
+}
+.rules {
+	background-color: #fff;
+	border-radius: var(--borderRadius);
+	left: 50%;
+	padding: 16px 20px;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: calc(100% - 10%);
+	max-width: 450px;
+	z-index: 10;
+}
+.rulesHeader {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+	font-size: 1.6rem;
+}
+.rulesText {
+	color: var(--darkText);
+	font-size: 2rem;
+}
+.close {
+	background-color: transparent;
+	border: none;
+	color: var(--border);
+	cursor: pointer;
+}
+.rules img {
+	margin: 0 auto;
+}
 /* Responsive */
 @media (min-width: 768px) {
 	header {
