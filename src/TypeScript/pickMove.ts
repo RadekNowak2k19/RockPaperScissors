@@ -1,5 +1,7 @@
 import { Rock, Paper, Scissors } from "../assets/images";
+import { Option, Postion } from "./type";
 export const pickMoveElement = () => {
+	console.log("PickMoveElement");
 	const containerElement = <HTMLElement>document.createElement("main");
 	const pickElement = <HTMLDivElement>document.createElement("div");
 
@@ -9,15 +11,18 @@ export const pickMoveElement = () => {
 	pickElement.classList.add("pick");
 	containerElement.appendChild(pickElement);
 	pickElement.innerHTML = traingle;
-	pickElement.appendChild(renderOptionElement("Rock"));
-	pickElement.appendChild(renderOptionElement("Paper"));
-	pickElement.appendChild(renderOptionElement("Scissors"));
+	pickElement.appendChild(renderOptionElement("Rock", "Absolute"));
+	pickElement.appendChild(renderOptionElement("Paper", "Absolute"));
+	pickElement.appendChild(renderOptionElement("Scissors", "Absolute"));
 
 	return containerElement;
 };
-
-type Option = "Rock" | "Paper" | "Scissors";
-const renderOptionElement = (option: Option) => {
+// type Postion = "Relative" | "Absolute";
+// type Option = "Rock" | "Paper" | "Scissors";
+export const renderOptionElement = (
+	option: Option,
+	postion: Postion | null = null
+) => {
 	const optionElement = <HTMLDivElement>document.createElement("div");
 	const insideElement = <HTMLDivElement>document.createElement("div");
 	const imageElement = <HTMLImageElement>document.createElement("img");
@@ -25,6 +30,8 @@ const renderOptionElement = (option: Option) => {
 	insideElement.classList.add("inside");
 	optionElement.appendChild(insideElement);
 	insideElement.appendChild(imageElement);
+
+	optionElement.classList.add(`choosePosition${postion}`);
 
 	if (option === "Rock") {
 		optionElement.classList.add("rock", "choose");

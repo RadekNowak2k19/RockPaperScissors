@@ -1,14 +1,28 @@
 import "./style.css";
 import "./TypeScript/header";
 import "./TypeScript/rules";
+import "./TypeScript/whoWon";
 import { renderHeaderElement } from "./TypeScript/header";
 import { pickMoveElement } from "./TypeScript/pickMove";
 import { renderRules } from "./TypeScript/rules";
+import { whoWon } from "./TypeScript/whoWon";
+
+interface GameStaus {
+	isPicked: boolean;
+}
+
+let gameStatus: GameStaus = {
+	isPicked: false,
+};
 
 const appElement = <HTMLDivElement>document.getElementById("app");
 appElement.appendChild(renderHeaderElement());
-appElement.appendChild(pickMoveElement());
+appElement.appendChild(gameStatus.isPicked ? whoWon() : pickMoveElement());
 appElement.appendChild(renderRules());
+
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+// Game
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 // Events

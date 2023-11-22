@@ -124,7 +124,7 @@ header div p {
 .rock {
 	background: linear-gradient(90deg, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
 	bottom: 0;
-	left: 50;
+	left: 0;
 	transform: translate(100%, 0);
 }
 .choose {
@@ -134,9 +134,15 @@ header div p {
 	display: flex;
 	height: 100px;
 	justify-content: center;
-	position: absolute;
 	transition: all 0.3s linear;
 	width: 100px;
+}
+.choosePositionAbsolute {
+	position: absolute;
+}
+.choosePositionRelative {
+	position: relative;
+	transform: none !important;
 }
 .inside {
 	background-color: #fff;
@@ -215,6 +221,49 @@ header div p {
 .rules img {
 	margin: 0 auto;
 }
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+// WhoWon
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+.whoWon {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	width: calc(100% - 10%);
+	margin: 5rem auto 0;
+	max-width: 600px;
+}
+.renderChoice,
+.winner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.renderChoice {
+	gap: 2rem;
+}
+.renderChoice p {
+	color: #fff;
+	font-size: 12px;
+}
+.winner span {
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	font-size: 12px;
+}
+.btnRestart {
+	background-color: transparent;
+	border: 1px solid var(--border);
+	border-radius: var(--borderRadius);
+	color: #fff;
+	padding: 8px 12px;
+}
+.btnRestart:hover {
+	background-color: #fff;
+	color: hsl(349, 70%, 56%);
+	cursor: pointer;
+}
 /* Responsive */
 @media (min-width: 768px) {
 	header {
@@ -236,5 +285,12 @@ header div p {
 	}
 	.rock {
 		transform: translateX(50%);
+	}
+	.renderChoice p {
+		color: #fff;
+		font-size: 18px;
+	}
+	.winner span {
+		font-size: 18px;
 	}
 }
