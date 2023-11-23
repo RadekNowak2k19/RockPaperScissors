@@ -2,7 +2,7 @@ import { Rock, Paper, Scissors } from "../assets/images";
 import { Option, Postion } from "./type";
 export const pickMoveElement = () => {
 	console.log("PickMoveElement");
-	const containerElement = <HTMLElement>document.createElement("main");
+	const containerElement = <HTMLDivElement>document.createElement("div");
 	const pickElement = <HTMLDivElement>document.createElement("div");
 
 	const traingle = `<svg width="313" height="278" xmlns="http://www.w3.org/2000/svg"><path stroke="#000" stroke-width="15" fill="none" opacity=".2" d="M156.5 262 300 8H13z"/></svg>`;
@@ -17,8 +17,6 @@ export const pickMoveElement = () => {
 
 	return containerElement;
 };
-// type Postion = "Relative" | "Absolute";
-// type Option = "Rock" | "Paper" | "Scissors";
 export const renderOptionElement = (
 	option: Option,
 	postion: Postion | null = null
@@ -35,14 +33,17 @@ export const renderOptionElement = (
 
 	if (option === "Rock") {
 		optionElement.classList.add("rock", "choose");
+		optionElement.setAttribute("data-option", "Rock");
 		imageElement.src = Rock;
 	}
 	if (option === "Paper") {
 		optionElement.classList.add("paper", "choose");
+		optionElement.setAttribute("data-option", "Paper");
 		imageElement.src = Paper;
 	}
 	if (option === "Scissors") {
 		optionElement.classList.add("scissors", "choose");
+		optionElement.setAttribute("data-option", "Scissors");
 		imageElement.src = Scissors;
 	}
 

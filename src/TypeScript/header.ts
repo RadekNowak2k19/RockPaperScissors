@@ -13,7 +13,7 @@ export const renderHeaderElement = () => {
 	titleElement.appendChild(renderElements("SCISSORS"));
 
 	scoreElement.appendChild(scoreSpanElement).innerText = "Score";
-	scoreElement.appendChild(pointsElemnet).innerText = "10";
+	scoreElement.appendChild(pointsElemnet).innerText = "0";
 
 	return headerElemenet;
 };

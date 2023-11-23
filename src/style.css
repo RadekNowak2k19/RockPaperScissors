@@ -225,21 +225,28 @@ header div p {
 // WhoWon
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 .whoWon {
-	align-items: center;
 	display: flex;
-	justify-content: space-between;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
 	width: calc(100% - 10%);
 	margin: 5rem auto 0;
 	max-width: 600px;
 }
+.active {
+	display: flex;
+}
+.hidden {
+	display: none;
+}
 .renderChoice,
 .winner {
+	align-items: center;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 }
 .renderChoice {
-	gap: 2rem;
+	gap: 1rem;
 }
 .renderChoice p {
 	color: #fff;

@@ -7,19 +7,21 @@ export const whoWon = () => {
 	const spanElement = <HTMLSpanElement>document.createElement("span");
 	const buttonElement = <HTMLButtonElement>document.createElement("button");
 
-	whoWonElement.classList.add("whoWon");
+	whoWonElement.classList.add("whoWon", "hidden");
 	displayWinnerElement.classList.add("winner");
 	buttonElement.classList.add("btnRestart");
 
-	spanElement.innerText = "you won";
+	spanElement.innerText = "";
 	buttonElement.innerText = "play again";
 
-	whoWonElement.appendChild(renderChoice("YOU PICKED", "Paper", "Relative"));
+	whoWonElement.appendChild(
+		renderChoice("YOU PICKED", "Paper", "Relative", "player")
+	);
 	whoWonElement.appendChild(displayWinnerElement);
 	displayWinnerElement.appendChild(spanElement);
 	displayWinnerElement.appendChild(buttonElement);
 	whoWonElement.appendChild(
-		renderChoice("THE HOUSE PICKED", "Paper", "Relative")
+		renderChoice("THE HOUSE PICKED", "Rock", "Relative", "computer")
 	);
 
 	return whoWonElement;
@@ -30,11 +32,20 @@ const pickText = (text: string) => {
 	textParagraph.innerText = text;
 	return textParagraph;
 };
-const renderChoice = (text: string, type: Option, position: Postion) => {
+export const renderChoice = (
+	text: string,
+	type: Option,
+	position: Postion,
+	who: string
+) => {
 	const displayChoiceElement = <HTMLDivElement>document.createElement("div");
+	const coinElement = document.createElement("div");
 	displayChoiceElement.classList.add("renderChoice");
+	coinElement.classList.add("coin");
 	displayChoiceElement.appendChild(pickText(text));
-	displayChoiceElement.appendChild(renderOptionElement(type, position));
+	displayChoiceElement.appendChild(coinElement);
+	coinElement.appendChild(renderOptionElement(type, position));
+	displayChoiceElement.setAttribute("datasetWho", who);
 
 	return displayChoiceElement;
 };
